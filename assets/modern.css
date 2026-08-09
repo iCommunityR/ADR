@@ -1,1143 +1,688 @@
-/* African Disputes Resolution — 2026 interface refresh
-   Loaded after the legacy styles so the platform can keep its existing PHP structure
-   while presenting a single, modern visual language. */
-:root{
-  --ink:#102536;
-  --muted:#607487;
-  --green:#071f33;
-  --green-2:#0b3150;
-  --green-3:#008c8c;
-  --gold:#008c8c;
-  --gold-soft:#e9f7f7;
-  --cream:#f4f7fa;
-  --paper:#ffffff;
-  --line:#dfe7ee;
-  --shadow:0 24px 70px rgba(15,43,64,.10);
-  --radius:24px;
-  --radius-sm:14px;
-  --max:1280px;
-  --font:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --serif:var(--font);
-  --navy:#071f33;
-  --navy-2:#0a2d49;
-  --blue:#155f9b;
-  --teal:#008c8c;
-  --teal-dark:#087477;
-  --aqua:#dff5f4;
-  --ice:#eef6f9;
-  --surface:#f7f9fb;
-  --surface-2:#f0f5f8;
-  --white:#fff;
-  --clay:#a84f3d;
-  --clay-dark:#863b30;
-  --clay-soft:#f8e8e1;
-  --sand:#fff7f1;
-}
-body{background:var(--white);color:var(--ink);font-size:15px;line-height:1.65;letter-spacing:-.005em}
-.container{width:min(calc(100% - 48px),var(--max))}.narrow{width:min(calc(100% - 48px),820px)}
-::selection{background:#cceeed;color:#05263b}
-
-/* Header */
-.site-header.modern-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);border:0;border-bottom:1px solid rgba(18,52,76,.08);backdrop-filter:blur(18px);box-shadow:0 5px 26px rgba(9,38,59,.035)}
-.modern-nav-row{height:82px;gap:26px}.modern-brand{gap:11px}.modern-brand img{width:43px;height:43px;border-radius:13px;box-shadow:0 8px 18px rgba(7,31,51,.14)}
-.modern-brand>span:last-child{line-height:1}.modern-brand strong{font-size:17px;font-weight:850;letter-spacing:-.035em;color:var(--navy)}.modern-brand small{margin-top:6px;color:#7c8b98;font-size:8.5px;font-weight:750;letter-spacing:.14em;text-transform:uppercase}
-.modern-main-nav{flex:1;justify-content:space-between;gap:18px}.nav-primary,.nav-actions{display:flex;align-items:center}.nav-primary{gap:2px;margin-left:auto}.nav-actions{gap:8px}
-.modern-main-nav a{position:relative;border-radius:10px;padding:10px 11px;color:#526575;font-size:12.5px;font-weight:740;background:transparent;box-shadow:none}
-.modern-main-nav a:hover{background:#f3f7f9;color:var(--navy)}.modern-main-nav .nav-primary>a.active{background:transparent;color:var(--navy)}
-.modern-main-nav .nav-primary>a.active:after{content:"";position:absolute;left:11px;right:11px;bottom:1px;height:2px;border-radius:99px;background:var(--teal)}
-.nav-search,.workspace-link{display:inline-flex!important;align-items:center;gap:7px!important;border:1px solid var(--line)!important}.modern-main-nav .nav-search{background:#fff!important;color:var(--navy)!important}.modern-main-nav .workspace-link{background:var(--navy)!important;color:#fff!important;border-color:var(--navy)!important;padding-inline:13px}.modern-main-nav .workspace-link:hover{background:var(--navy-2)!important}.modern-main-nav .workspace-link.active:after{display:none}.nav-search svg,.workspace-link svg{width:16px;height:16px}
-.language-picker{border:1px solid var(--line);border-radius:10px;background:#fff;padding:0}.language-picker select{height:38px;min-width:55px;border:0;background:transparent;padding:0 25px 0 10px;color:#526575;font-size:11px;font-weight:800;outline:0}
-.nav-toggle{border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy)}
-
-/* Homepage hero */
-.hero.hero-modern{position:relative;min-height:0;padding:88px 0 0;background:linear-gradient(122deg,#061c2e 0%,#082944 54%,#073d4e 100%);isolation:isolate;overflow:hidden}
-.hero.hero-modern:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(to bottom,#000,transparent 88%);z-index:-3}
-.hero.hero-modern:after{content:"";position:absolute;width:680px;height:680px;right:-230px;top:-310px;border-radius:50%;background:radial-gradient(circle,rgba(37,194,185,.24) 0,rgba(37,194,185,.07) 36%,transparent 69%);z-index:-2}
-.hero-orbit{position:absolute;border:1px solid rgba(171,231,229,.13);border-radius:50%;z-index:-1}.orbit-one{width:520px;height:520px;right:4%;top:-220px}.orbit-two{width:760px;height:760px;right:-15%;top:-350px}
-.hero-modern-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(390px,.72fr);gap:72px;align-items:center;padding-bottom:70px}.hero-main-copy{max-width:760px}.hero-kicker{color:#8ce4df;display:flex;align-items:center;gap:9px}.hero-kicker i{width:7px;height:7px;border-radius:50%;background:#48d2ca;box-shadow:0 0 0 5px rgba(72,210,202,.12)}
-.hero-modern h1{max-width:790px;margin:0 0 22px;font-family:var(--font);font-size:clamp(48px,5.4vw,74px);font-weight:850;line-height:1.01;letter-spacing:-.064em;color:#fff}.hero-modern .hero-main-copy>p{max-width:700px;margin:0 0 34px;color:#c7d9e3;font-size:17px;line-height:1.7}
-.modern-hero-search{max-width:760px;min-height:66px;margin:0;padding:7px 7px 7px 18px;border:1px solid rgba(255,255,255,.18);border-radius:16px;background:#fff;box-shadow:0 26px 55px rgba(0,0,0,.22)}.modern-hero-search .search-icon{display:grid;place-items:center;color:#7790a0}.modern-hero-search .search-icon svg{width:20px}.modern-hero-search input{font-size:14px;padding:12px}.modern-hero-search button{display:flex;align-items:center;gap:12px;align-self:stretch;border-radius:11px;background:var(--teal);color:#fff;padding:0 23px;font-size:13px;letter-spacing:.01em}.modern-hero-search button:hover{background:#087c7e}.modern-hero-search button span{font-size:17px}
-.hero-shortcuts{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:16px;color:#8fa9b9;font-size:11.5px}.hero-shortcuts span{font-weight:750}.hero-shortcuts a{padding:5px 9px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#d3e6ec;background:rgba(255,255,255,.04)}.hero-shortcuts a:hover{border-color:rgba(110,224,219,.35);background:rgba(110,224,219,.08);color:#fff}
-.research-navigator{position:relative;padding:21px;border:1px solid rgba(255,239,230,.28);border-radius:24px;background:linear-gradient(145deg,var(--clay) 0%,var(--clay-dark) 100%);box-shadow:0 35px 80px rgba(1,16,28,.30),0 14px 35px rgba(97,37,29,.22);overflow:hidden}.research-navigator:before{content:"";position:absolute;width:250px;height:250px;right:-105px;top:-135px;border-radius:50%;background:rgba(255,232,220,.10);box-shadow:0 0 0 42px rgba(255,232,220,.045);pointer-events:none}.navigator-head{position:relative;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:4px 5px 18px}.navigator-head>div{display:flex;flex-direction:column}.navigator-head>div span{color:#ffd8c7;font-size:9px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}.navigator-head strong{margin-top:3px;color:#fff;font-size:16px}.live-chip{display:flex;align-items:center;gap:7px;padding:7px 9px;border:1px solid rgba(255,255,255,.20);border-radius:999px;background:rgba(91,33,27,.20);color:#fff2ec;font-size:9px;font-weight:800}.live-chip i{width:6px;height:6px;border-radius:50%;background:#7ed6b2;box-shadow:0 0 0 4px rgba(126,214,178,.14)}
-.navigator-grid{position:relative;display:grid;gap:7px}.navigator-grid>a{display:grid;grid-template-columns:41px minmax(0,1fr) 18px;gap:12px;align-items:center;padding:13px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(255,247,241,.09);transition:.2s ease}.navigator-grid>a:hover{transform:translateX(3px);background:rgba(255,247,241,.16);border-color:rgba(255,226,211,.34)}.navigator-grid i{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;background:var(--sand);color:var(--clay-dark);box-shadow:0 6px 16px rgba(89,31,24,.13)}.navigator-grid i svg{width:19px}.navigator-grid a>span{display:flex;flex-direction:column;min-width:0}.navigator-grid strong{color:#fff;font-size:12px}.navigator-grid small{display:block;margin-top:2px;color:#f0c8b8;font-size:9.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.navigator-grid b{color:#ffd3c0;font-size:16px}.navigator-foot{position:relative;display:flex;gap:8px;flex-wrap:wrap;padding:16px 5px 2px}.navigator-foot span{padding:5px 8px;border-radius:7px;background:rgba(88,30,23,.19);color:#f6d8ca;font-size:9px}
-.hero-metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.11);background:rgba(1,18,31,.16)}.hero-metrics>a{display:grid;grid-template-columns:46px 1fr;gap:13px;align-items:center;min-height:106px;padding:22px 25px;border-left:1px solid rgba(255,255,255,.09);transition:.18s}.hero-metrics>a:first-child{border-left:0}.hero-metrics>a:hover{background:rgba(255,255,255,.055)}.metric-icon{display:grid;place-items:center;width:44px;height:44px;border-radius:13px;background:rgba(75,211,203,.10);color:#7ee0da}.metric-icon svg{width:20px}.hero-metrics a>span:last-child{display:flex;flex-direction:column}.hero-metrics strong{color:#fff;font-size:26px;line-height:1;font-weight:820;letter-spacing:-.04em}.hero-metrics small{margin-top:7px;color:#9fb6c2;font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
-
-/* Shared section system */
-.section{padding:86px 0}.section-tight{padding:78px 0}.section-heading{margin-bottom:34px}.section-heading .eyebrow{color:var(--teal);margin-bottom:10px}.section-heading h2{margin:0;color:var(--navy);font-family:var(--font);font-size:clamp(31px,3.6vw,46px);font-weight:820;line-height:1.08;letter-spacing:-.047em}.section-heading p{max-width:650px;margin:12px 0 0;color:var(--muted);font-size:14px}.centered-heading{text-align:center;max-width:760px;margin-inline:auto;margin-bottom:38px}.centered-heading p{margin-inline:auto}.split-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px}.split-heading>div{max-width:760px}.text-link{flex:none;display:inline-flex;align-items:center;gap:10px;color:var(--navy);font-size:12px;font-weight:820}.text-link span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--aqua);color:var(--teal-dark);font-size:15px}
-
-/* Research paths */
-.research-paths{background:#fff}.research-path-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 22px 60px rgba(15,43,64,.055)}.research-path-grid>a{position:relative;display:flex;flex-direction:column;min-height:276px;padding:28px;border-left:1px solid var(--line);transition:.2s ease;overflow:hidden}.research-path-grid>a:first-child{border-left:0}.research-path-grid>a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:.2s ease}.research-path-grid>a:hover{background:#f9fbfc}.research-path-grid>a:hover:after{transform:scaleX(1)}.path-number{position:absolute;right:23px;top:20px;color:#c1cdd5;font-size:10px;font-weight:850;letter-spacing:.08em}.research-path-grid i{display:grid;place-items:center;width:49px;height:49px;margin-bottom:27px;border-radius:14px;background:#eef7f8;color:var(--teal-dark)}.research-path-grid i svg{width:22px}.research-path-grid h3{margin:0 0 9px;color:var(--navy);font-size:17px;font-weight:800;letter-spacing:-.025em}.research-path-grid p{margin:0;color:#6e8090;font-size:12px}.research-path-grid b{margin-top:auto;color:var(--teal);font-size:18px}
-
-/* Regional frameworks */
-.framework-section{background:var(--surface)}.framework-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.framework-rail>a{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr) 24px;gap:15px;min-height:178px;padding:22px;border:1px solid transparent;border-radius:18px;background:#fff;box-shadow:0 9px 28px rgba(15,43,64,.045);transition:.2s ease}.framework-rail>a:hover{transform:translateY(-3px);border-color:#b6dfe0;box-shadow:0 19px 42px rgba(15,43,64,.08)}.framework-index{font-size:9px;font-weight:850;color:#9cadb9;padding-top:3px}.framework-rail strong{display:inline-flex;padding:5px 7px;border-radius:7px;background:#eaf7f7;color:var(--teal-dark);font-size:9px;font-weight:900;letter-spacing:.08em}.framework-rail h3{margin:14px 0 7px;color:var(--navy);font-size:15px;line-height:1.3;font-weight:790}.framework-rail p{margin:0;color:#738593;font-size:11px;line-height:1.55}.framework-rail b{color:#8aa0ae;font-size:15px}
-
-/* Countries */
-.country-discovery{background:linear-gradient(125deg,#edf6f7 0%,#f6f9fb 62%,#edf3f7 100%)}.country-discovery-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:84px;align-items:center}.country-discovery-copy{max-width:510px}.country-discovery-copy h2{margin:0;color:var(--navy);font-size:clamp(38px,4.4vw,59px);font-weight:850;line-height:1.02;letter-spacing:-.058em}.country-discovery-copy>p{margin:20px 0 25px;color:#617787;font-size:14px}.region-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:27px}.region-links a{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid #d8e5e9;border-radius:999px;background:rgba(255,255,255,.7);color:#466374;font-size:10px;font-weight:780}.region-links a:hover{border-color:#8bc9c9;color:var(--teal-dark);background:#fff}.region-links span{color:var(--teal)}.button.modern-primary{border-radius:11px;background:var(--navy);color:#fff;padding:13px 17px}.button.modern-primary:hover{background:var(--navy-2)}
-.jurisdiction-panel{border:1px solid rgba(24,72,98,.11);border-radius:25px;background:rgba(255,255,255,.87);box-shadow:0 28px 70px rgba(15,43,64,.09);overflow:hidden;backdrop-filter:blur(12px)}.jurisdiction-panel-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:18px 20px;border-bottom:1px solid var(--line);background:#fff}.jurisdiction-panel-head>span{color:var(--teal);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.13em}.jurisdiction-panel-head strong{color:var(--navy);font-size:13px}.jurisdiction-panel-head a{font-size:10px;font-weight:800;color:#5a7485}.jurisdiction-list{display:grid;grid-template-columns:1fr 1fr;padding:9px}.jurisdiction-list>a{display:grid;grid-template-columns:43px minmax(0,1fr) 18px;gap:11px;align-items:center;padding:12px;border-radius:13px;transition:.18s}.jurisdiction-list>a:hover{background:#f0f7f8}.country-code{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--navy);color:#fff;font-size:8.5px;font-weight:900;letter-spacing:.05em}.jurisdiction-list a>span:nth-child(2){display:flex;flex-direction:column;min-width:0}.jurisdiction-list strong{color:#294253;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.jurisdiction-list small{margin-top:2px;color:#82929d;font-size:9px}.jurisdiction-list b{color:#8ca1ad;font-size:14px}
-
-/* Latest additions — designed as a data stream rather than news cards */
-.latest-section{background:#fff}.latest-stream{border-top:1px solid var(--line)}.latest-stream article{display:grid;grid-template-columns:210px 1fr;gap:32px;padding:25px 8px;border-bottom:1px solid var(--line)}.latest-meta{display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;color:#83939e;font-size:9.5px}.type-pill{padding:5px 8px;border-radius:999px;background:var(--aqua);color:var(--teal-dark);font-weight:850}.latest-meta time{width:100%;padding-top:5px;color:#a0acb4}.latest-main{display:grid;grid-template-columns:43px minmax(0,1fr) 25px;gap:16px;align-items:start}.latest-main>i{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#f0f5f8;color:#487086}.latest-main>i svg{width:19px}.latest-main h3{margin:0 0 6px;color:var(--navy);font-family:var(--font);font-size:17px;font-weight:780;line-height:1.35;letter-spacing:-.025em}.latest-main h3 a:hover{color:var(--teal-dark)}.latest-main p{max-width:760px;margin:0;color:#728390;font-size:11.5px}.latest-main>b{color:#91a2ad;font-size:17px}
-
-/* Research + newsletter CTAs */
-.research-cta{background:var(--navy);color:#fff}.research-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:50px;padding:62px 0}.research-cta-inner>div:first-child{max-width:660px}.research-cta h2{margin:0 0 10px;color:#fff;font-size:clamp(31px,4vw,49px);line-height:1.05;letter-spacing:-.05em}.research-cta p{margin:0;color:#a9c0cd}.research-cta-actions{display:flex;align-items:center;gap:18px;flex:none}.research-cta-actions>a:last-child{color:#b9d6df;font-size:12px;font-weight:760}.light-button{background:#fff;color:var(--navy);border-radius:11px}.light-button:hover{background:#edf7f7}.newsletter-modern{padding:52px 0;background:#f4f8fa;border-bottom:1px solid var(--line)}.newsletter-modern .container{display:grid;grid-template-columns:1fr 520px;gap:70px;align-items:center}.newsletter-modern h2{margin:0;color:var(--navy);font-size:27px;line-height:1.2;letter-spacing:-.035em}.newsletter-modern p{margin:7px 0 0;color:#6d808f}.newsletter-modern form{display:flex;padding:6px;border:1px solid #d7e3e9;border-radius:13px;background:#fff;box-shadow:0 12px 32px rgba(20,55,77,.05)}.newsletter-modern label{flex:1}.newsletter-modern input{width:100%;height:45px;border:0;outline:0;padding:0 12px;background:transparent;font-size:13px}.newsletter-modern button{display:flex;align-items:center;gap:10px;border:0;border-radius:9px;background:var(--teal);color:#fff;padding:0 18px;font-size:12px;font-weight:820}.newsletter-modern button:hover{background:var(--teal-dark)}
-
-/* Secondary page shell */
-.page-hero{position:relative;padding:68px 0 66px;border:0;border-bottom:1px solid var(--line);background:linear-gradient(135deg,#f5f9fb,#edf5f7);overflow:hidden}.page-hero:after{content:"";position:absolute;width:420px;height:420px;right:-120px;top:-240px;border:1px solid rgba(0,140,140,.10);border-radius:50%;box-shadow:0 0 0 65px rgba(0,140,140,.025),0 0 0 130px rgba(0,140,140,.018)}.page-hero .container{position:relative;z-index:1}.page-hero .crumb{margin-bottom:18px;color:#8797a2}.page-hero h1{max-width:900px;margin:0 0 13px;color:var(--navy);font-family:var(--font);font-size:clamp(38px,4.8vw,59px);font-weight:840;line-height:1.03;letter-spacing:-.052em}.page-hero p{max-width:760px;margin:0;color:#647b8a;font-size:15px;line-height:1.7}
-.country-hero,.case-hero{background:linear-gradient(122deg,#071f33,#0c3b57)!important}.country-hero h1,.case-hero h1{font-family:var(--font);font-weight:830;letter-spacing:-.045em}.case-hero p,.country-hero p{color:#bed0da}.crumb.light{color:#a9c0cc}
-
-/* Country directory */
-.countries-directory-section{background:#f7f9fb}.country-tools{position:sticky;top:98px;z-index:8;gap:14px;margin-bottom:28px;padding:13px;border:1px solid rgba(18,52,76,.10);border-radius:16px;background:rgba(255,255,255,.94);box-shadow:0 15px 35px rgba(15,43,64,.055);backdrop-filter:blur(15px)}.country-tools .country-search{border-color:#dce6eb;border-radius:10px;background:#f7fafb}.country-tools .country-search input{font-size:13px}.region-tabs{gap:6px}.region-tabs button{padding:8px 12px;border-color:#dfe7ec;border-radius:9px;background:#fff;color:#637887;font-size:10px}.region-tabs button:hover{transform:none;border-color:#a9d4d4;background:#f2fafa;color:var(--teal-dark)}.region-tabs button.active{border-color:var(--navy);background:var(--navy);color:#fff;box-shadow:none}.modern-country-grid{grid-template-columns:repeat(4,1fr);gap:10px}.modern-country-grid a{min-height:80px;padding:12px;border-color:#e0e8ed;border-radius:14px;box-shadow:none}.modern-country-grid a:hover{transform:translateY(-2px);border-color:#a8d2d2;box-shadow:0 13px 28px rgba(15,43,64,.07)}.directory-code{background:#edf6f7;color:var(--teal-dark);border-radius:10px}.modern-country-grid strong{color:#233f52;font-size:12px}.modern-country-grid small{font-size:9px}.modern-country-grid b{color:#95a6b0}
-
-/* Regime cards */
-.regime-page-grid{grid-template-columns:repeat(3,1fr);gap:14px}.regime-page-grid .regime-card{padding:23px;border-color:#e0e7ec;border-radius:18px;box-shadow:none;background:#fff}.regime-page-grid .regime-card:hover{border-color:#add5d5;box-shadow:0 15px 35px rgba(15,43,64,.06)}.regime-card header{color:var(--teal-dark)}.regime-card h2{font-family:var(--font);font-size:21px;font-weight:790;color:var(--navy);letter-spacing:-.03em}.regime-card>p{font-size:12px}.compact-list a{border-radius:10px;background:#f7f9fb}
-
-/* Search / case-law / institutions */
-.filters,.form-card{border-color:#e0e7ec;border-radius:18px;box-shadow:0 18px 45px rgba(15,43,64,.055)}.filters button,.form-card button,.directory-search button{background:var(--teal);color:#fff}.filters button:hover,.form-card button:hover,.directory-search button:hover{background:var(--teal-dark);filter:none}.case-results article,.institution-grid article,.content-block,.case-facts,.country-side section{border-color:#e0e7ec!important;border-radius:18px!important;box-shadow:none!important;background:#fff}.case-results article:hover,.institution-grid article:hover{border-color:#acd5d5!important;box-shadow:0 16px 36px rgba(15,43,64,.06)!important}.pill,.chip{background:#e8f6f6;color:var(--teal-dark)}
-.split-title h2,.heading-action h2,.results-title h2,.search-group h2,.content-block h2,.prose h2{font-family:var(--font);font-weight:800;letter-spacing:-.035em;color:var(--navy)}
-.button{background:var(--teal);color:#fff;border-radius:10px}.button.dark-btn{background:var(--navy);color:#fff}.button:hover{filter:none;background:var(--teal-dark)}.button.dark-btn:hover{background:var(--navy-2)}
-
-/* Research pages */
-.research-profile,.folder-create,.folder-grid a,.research-items article,.plan-grid article{border-color:#e0e7ec!important;border-radius:18px!important;box-shadow:none!important}.folder-grid a:hover,.plan-grid article:hover{border-color:#afd5d5!important;box-shadow:0 15px 36px rgba(15,43,64,.06)!important}.research-profile{background:#f7f9fb}.folder-create{background:#fff}.plan-code{background:#e8f6f6!important;color:var(--teal-dark)!important}
-
-/* Footer */
-.modern-footer{padding:0;background:#061927;color:#a9bcc7}.footer-top{display:grid;grid-template-columns:1fr 1.45fr;gap:90px;padding:64px 0 48px}.footer-intro{max-width:390px}.footer-intro p{margin:21px 0 0;color:#8fa5b1;font-size:12px}.modern-footer .modern-brand strong{color:#fff}.modern-footer .modern-brand small{color:#75909f}.modern-footer .modern-brand img{box-shadow:none}.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:50px}.footer-links>div{display:flex;flex-direction:column;gap:9px}.footer-links h2{margin:0 0 7px;color:#dce8ed;font-family:var(--font);font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.footer-links a{color:#8fa5b1;font-size:11.5px}.footer-links a:hover{color:#fff}.modern-footer .footer-bottom{display:flex;justify-content:space-between;gap:30px;padding:19px 0 24px;border-top:1px solid rgba(255,255,255,.08);color:#6f8997;font-size:9.5px}
-
-/* Fine-grained legacy cleanup */
-.section.muted{background:#f6f8fa}.eyebrow{color:var(--teal);font-size:9.5px;font-weight:900;letter-spacing:.15em}.empty.large{border-radius:18px;background:#f7f9fb}.doc-list a,.case-list a{border-radius:12px}.status-chip,.legal-status{--status-accent:var(--teal)}
-input,select,textarea{accent-color:var(--teal)}input:focus,select:focus,textarea:focus{outline-color:rgba(0,140,140,.35)}
-
-/* RTL */
-html[dir="rtl"] .research-path-grid>a{border-left:0;border-right:1px solid var(--line)}html[dir="rtl"] .research-path-grid>a:first-child{border-right:0}html[dir="rtl"] .hero-metrics>a{border-left:0;border-right:1px solid rgba(255,255,255,.09)}html[dir="rtl"] .hero-metrics>a:first-child{border-right:0}
-
-@media(max-width:1180px){
-  .modern-main-nav a{padding:9px 7px;font-size:11.5px}.nav-primary{gap:0}.nav-actions{gap:5px}.workspace-link span,.nav-search span{display:none}.modern-main-nav .workspace-link,.modern-main-nav .nav-search{padding:10px!important}
-  .hero-modern-grid{grid-template-columns:1fr .72fr;gap:40px}.hero-modern h1{font-size:56px}
-  .research-path-grid{grid-template-columns:repeat(2,1fr)}.research-path-grid>a:nth-child(3){border-left:0;border-top:1px solid var(--line)}.research-path-grid>a:nth-child(4){border-top:1px solid var(--line)}
-  .modern-country-grid{grid-template-columns:repeat(3,1fr)}
-  .country-discovery-grid{gap:45px}
-}
-@media(max-width:940px){
-  .modern-nav-row{height:74px}.modern-brand img{width:39px;height:39px}.nav-toggle{display:grid;place-items:center;margin-left:auto}.modern-main-nav{position:absolute;display:none;left:20px;right:20px;top:68px;padding:13px;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:0 22px 60px rgba(15,43,64,.15)}.modern-main-nav.open{display:block}.nav-primary,.nav-actions{display:flex;flex-direction:column;align-items:stretch;width:100%;gap:2px}.nav-actions{padding-top:8px;margin-top:8px;border-top:1px solid var(--line)}.modern-main-nav a{display:flex!important;justify-content:flex-start;padding:11px 12px!important}.modern-main-nav .nav-primary>a.active{background:#f0f7f8}.modern-main-nav .nav-primary>a.active:after{display:none}.workspace-link span,.nav-search span{display:inline}.language-picker select{width:100%}.language-picker{margin-top:3px}.language-picker select{height:42px}
-  .hero.hero-modern{padding-top:64px}.hero-modern-grid{grid-template-columns:1fr;gap:38px;padding-bottom:45px}.hero-main-copy{max-width:800px}.research-navigator{max-width:680px}.hero-metrics{grid-template-columns:repeat(2,1fr)}.hero-metrics>a:nth-child(3),.hero-metrics>a:nth-child(4){border-top:1px solid rgba(255,255,255,.09)}.hero-metrics>a:nth-child(3){border-left:0}
-  .framework-rail{grid-template-columns:repeat(2,1fr)}.country-discovery-grid{grid-template-columns:1fr;gap:35px}.country-discovery-copy{max-width:720px}.newsletter-modern .container{grid-template-columns:1fr;gap:24px}.newsletter-modern form{max-width:600px}.footer-top{grid-template-columns:1fr;gap:42px}.footer-intro{max-width:600px}
-  .regime-page-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:720px){
-  .container,.narrow{width:min(calc(100% - 32px),var(--max))}.modern-brand small{display:none}.modern-brand strong{font-size:16px}
-  .hero.hero-modern{padding-top:52px}.hero-modern h1{font-size:clamp(39px,11vw,55px)}.hero-modern .hero-main-copy>p{font-size:15px}.modern-hero-search{display:grid;grid-template-columns:22px minmax(0,1fr);min-height:0;padding:9px}.modern-hero-search button{grid-column:1/-1;justify-content:center;min-height:46px;margin-top:4px}.hero-shortcuts{display:none}.research-navigator{padding:15px}.navigator-foot{display:none}.hero-metrics{margin-inline:-16px}.hero-metrics>a{min-height:88px;padding:15px 17px}.hero-metrics strong{font-size:21px}.metric-icon{width:39px;height:39px}.hero-metrics>a{grid-template-columns:40px 1fr}
-  .section,.section-tight{padding:64px 0}.section-heading h2{font-size:34px}.split-heading{align-items:flex-start;flex-direction:column;gap:15px}.centered-heading{text-align:left;margin-inline:0}
-  .research-path-grid{grid-template-columns:1fr}.research-path-grid>a{min-height:210px;border-left:0!important;border-top:1px solid var(--line);padding:23px}.research-path-grid>a:first-child{border-top:0}.research-path-grid i{margin-bottom:18px}.framework-rail{grid-template-columns:1fr}.framework-rail>a{min-height:150px}
-  .country-discovery-copy h2{font-size:40px}.jurisdiction-list{grid-template-columns:1fr}.latest-stream article{grid-template-columns:1fr;gap:13px}.latest-meta time{width:auto;padding-top:0}.research-cta-inner{align-items:flex-start;flex-direction:column;padding:50px 0}.research-cta-actions{flex-wrap:wrap}.newsletter-modern{padding:44px 0}.newsletter-modern form{display:grid}.newsletter-modern button{min-height:44px;justify-content:center}
-  .modern-country-grid{grid-template-columns:repeat(2,1fr)}.country-tools{position:static}.regime-page-grid{grid-template-columns:1fr}.page-hero{padding:52px 0}.page-hero h1{font-size:39px}
-  .footer-links{grid-template-columns:1fr 1fr;gap:34px}.modern-footer .footer-bottom{flex-direction:column;gap:5px}.footer-top{padding-top:50px}
-}
-@media(max-width:480px){
-  .hero-metrics{grid-template-columns:1fr}.hero-metrics>a{border-left:0!important;border-top:1px solid rgba(255,255,255,.09)}.hero-metrics>a:first-child{border-top:0}.modern-country-grid{grid-template-columns:1fr}.footer-links{grid-template-columns:1fr}.research-cta-actions{align-items:flex-start;flex-direction:column}.country-discovery-copy h2{font-size:36px}
-}
-
-
-/* Country flags — replaces ISO-code tiles on homepage and country directory */
-.country-flag-wrap,.directory-flag-wrap{display:flex;align-items:center;justify-content:center;flex:0 0 auto;background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible}
-.country-flag-wrap{width:48px;height:34px}.directory-flag-wrap{width:52px;height:36px}
-.country-flag,.directory-flag{display:block;object-fit:cover;border:1px solid rgba(15,43,64,.10);border-radius:5px;box-shadow:0 3px 8px rgba(15,43,64,.10);background:#fff}
-.country-flag{width:44px;height:30px}.directory-flag{width:48px;height:32px}
-.jurisdiction-list a:hover .country-flag,.modern-country-grid a:hover .directory-flag{box-shadow:0 5px 12px rgba(15,43,64,.14)}
-@media (max-width:640px){.country-flag-wrap{width:44px;height:32px}.country-flag{width:40px;height:27px}.directory-flag-wrap{width:48px;height:34px}.directory-flag{width:44px;height:29px}}
-
-/* =========================================================
-   Palette refinement — selected 07 Aug 2026
-   Primary: Slate Blue #345C7C
-   Accent: Warm Sand #FFF3D6
-   Typography: medium headings + light/regular body (Option D)
-   ========================================================= */
-:root{
-  --ink:#34495a;
-  --muted:#71818e;
-  --green:#345c7c;
-  --green-2:#2d526f;
-  --navy:#345c7c;
-  --navy-2:#2d526f;
-  --blue:#477795;
-  --primary:#345c7c;
-  --primary-soft:#eef4f8;
-  --warm-sand:#fff3d6;
-  --warm-sand-soft:#fff9e9;
-  --warm-sand-line:#ead59c;
-  --warm-sand-ink:#6f5a25;
-}
-
-/* Softer overall typography — Option D */
-body{font-weight:400;color:var(--ink)}
-p,li,small,label,input,select,textarea,button{font-weight:400}
-h1,h2,h3,h4,h5,h6,
-.hero-modern h1,.page-hero h1,.country-hero h1,.case-hero h1,
-.section-heading h2,.research-cta h2,.newsletter-modern h2,
-.split-title h2,.heading-action h2,.results-title h2,.search-group h2,.content-block h2,.prose h2,
-.regime-card h2,.latest-main h3{font-weight:600!important}
-strong,b,.modern-brand strong,.research-path-grid h3,.navigator-grid strong,.hero-metrics strong{font-weight:600}
-.modern-brand small,.modern-main-nav a,.language-picker select,.hero-shortcuts span,
-.text-link,.path-number,.hero-metrics small,.eyebrow,.type-pill,.newsletter-modern button,
-.footer-links h2,.status-chip,.legal-status,.region-tabs button{font-weight:500!important}
-.hero-modern h1{letter-spacing:-.045em}.section-heading h2,.page-hero h1{letter-spacing:-.035em}
-
-/* Lighter Slate Blue primary system */
-.site-header.modern-header{box-shadow:0 5px 24px rgba(52,92,124,.045)}
-.modern-brand img{box-shadow:0 8px 18px rgba(52,92,124,.12)}
-.hero.hero-modern{background:linear-gradient(122deg,#345c7c 0%,#3f6d8d 55%,#4c7f8f 100%)}
-.hero.hero-modern:after{background:radial-gradient(circle,rgba(133,220,214,.22) 0,rgba(133,220,214,.07) 38%,transparent 70%)}
-.hero-kicker{color:#d6fbf8}.hero-kicker i{background:#9ee7e2}
-.hero-modern .hero-main-copy>p{color:#e4edf3}
-.hero-shortcuts{color:#d0dee6}.hero-shortcuts a{color:#f1f7fa;background:rgba(255,255,255,.07)}
-.hero-metrics{background:rgba(36,72,99,.18)}
-.hero-metrics small{color:#d8e5ec}.metric-icon{background:rgba(221,249,247,.15);color:#d9fbf8}
-.country-hero,.case-hero{background:linear-gradient(122deg,#345c7c,#4a7895)!important}
-.country-hero p,.case-hero p{color:#e3edf2}.crumb.light{color:#d8e4ea}
-.research-cta{background:var(--navy)}
-.modern-footer{background:#2d526f;color:#d3dfe6}.footer-intro p,.footer-links a{color:#c1d0d9}.modern-footer .modern-brand small{color:#b6c8d2}.modern-footer .footer-bottom{color:#b2c5d0}
-
-/* Selected third color: Warm Sand for Coverage at a glance */
-.research-navigator{
-  border-color:var(--warm-sand-line);
-  background:linear-gradient(145deg,var(--warm-sand-soft) 0%,var(--warm-sand) 100%);
-  box-shadow:0 28px 65px rgba(45,82,111,.18),0 10px 28px rgba(144,111,42,.10);
-}
-.research-navigator:before{
-  background:rgba(255,255,255,.46);
-  box-shadow:0 0 0 42px rgba(255,255,255,.18);
-}
-.navigator-head>div span{color:#a27718;font-weight:500}
-.navigator-head strong{color:#4b5560;font-weight:600}
-.live-chip{
-  border-color:#e3cd91;
-  background:rgba(255,255,255,.62);
-  color:#6b634f;
-  font-weight:500;
-}
-.navigator-grid>a{
-  border-color:rgba(185,151,72,.22);
-  background:rgba(255,255,255,.54);
-}
-.navigator-grid>a:hover{
-  background:rgba(255,255,255,.82);
-  border-color:#dcc583;
-}
-.navigator-grid i{
-  background:#fff;
-  color:#9b7112;
-  box-shadow:0 6px 16px rgba(129,95,23,.09);
-}
-.navigator-grid strong{color:#435462}
-.navigator-grid small{color:#7e7868}
-.navigator-grid b{color:#9b7112}
-.navigator-foot span{background:rgba(255,255,255,.58);color:#746b54}
-
-/* Keep form/action hierarchy crisp without reverting to heavy text */
-.button,.modern-hero-search button,.filters button,.form-card button,.directory-search button{font-weight:500}
-
-/* =========================================================
-   Reference palette implementation — 07 Aug 2026
-   Based on supplied visual reference:
-   Deep blue #003567 / turquoise #16C1BA / soft white #F7F8F5
-   Brand: African Disputes Resolution
-   ========================================================= */
-:root{
-  --ink:#263847;
-  --muted:#667989;
-  --green:#003567;
-  --green-2:#002b55;
-  --green-3:#16c1ba;
-  --navy:#003567;
-  --navy-2:#002b55;
-  --blue:#0b5b89;
-  --primary:#003567;
-  --teal:#16c1ba;
-  --teal-dark:#0ca9a4;
-  --aqua:#ddf7f5;
-  --ice:#eef8f8;
-  --surface:#f7f8f7;
-  --surface-2:#f1f5f5;
-  --cream:#f7f8f5;
-  --line:#dce5e7;
-  --white:#fff;
-  --soft-white:#f7f8f5;
-  --dark-copy:#dce8ed;
-}
-
-/* Reference-style dark navigation */
-.site-header.modern-header{
-  background:#003567;
-  border-bottom:1px solid rgba(255,255,255,.09);
-  box-shadow:0 7px 24px rgba(0,38,73,.16);
-  backdrop-filter:none;
-}
-.modern-brand img{box-shadow:none}
-.modern-brand strong{color:#fff;font-weight:600;letter-spacing:-.025em}
-.modern-brand small{color:#8edbd7;font-weight:400}
-.modern-main-nav a{color:#eef5f6;font-weight:500}
-.modern-main-nav a:hover{background:rgba(255,255,255,.08);color:#fff}
-.modern-main-nav .nav-primary>a.active{color:#fff}
-.modern-main-nav .nav-primary>a.active:after{background:#16c1ba;height:3px}
-.nav-search,.workspace-link{border-color:rgba(255,255,255,.25)!important}
-.modern-main-nav .nav-search{background:transparent!important;color:#fff!important}
-.modern-main-nav .nav-search:hover{background:rgba(255,255,255,.08)!important}
-.modern-main-nav .workspace-link{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.38)!important}
-.modern-main-nav .workspace-link:hover{background:#16c1ba!important;color:#003567!important;border-color:#16c1ba!important}
-.language-picker{border-color:rgba(255,255,255,.28);background:transparent}
-.language-picker select{color:#fff;font-weight:500;background:#003567}
-.nav-toggle{border-color:rgba(255,255,255,.26);background:transparent;color:#fff}
-
-/* Hero follows the supplied solid deep-blue background */
-.hero.hero-modern{
-  background:#003567;
-}
-.hero.hero-modern:before{
-  background:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-  background-size:72px 72px;
-}
-.hero.hero-modern:after{
-  background:radial-gradient(circle,rgba(22,193,186,.17) 0,rgba(22,193,186,.05) 38%,transparent 70%);
-}
-.hero-orbit{border-color:rgba(22,193,186,.16)}
-.hero-kicker{color:#25d1ca}
-.hero-kicker i{background:#25d1ca;box-shadow:0 0 0 5px rgba(37,209,202,.12)}
-.hero-modern h1{color:#f8f7f2;font-weight:600}
-.hero-modern .hero-main-copy>p{color:#e3ebee;font-weight:400}
-.hero-shortcuts{color:#a9c1cc}
-.hero-shortcuts a{color:#f3f7f8;border-color:rgba(255,255,255,.20);background:transparent}
-.hero-shortcuts a:hover{border-color:#16c1ba;background:rgba(22,193,186,.11)}
-.modern-hero-search{border-color:rgba(255,255,255,.2);box-shadow:0 22px 48px rgba(0,27,53,.24)}
-.modern-hero-search button{background:#16c1ba;color:#003567;font-weight:600}
-.modern-hero-search button:hover{background:#27d0ca;color:#002d57}
-
-/* Coverage at a glance: dark blue card like the chosen reference, not sand/brown */
-.research-navigator{
-  border:1px solid rgba(160,210,222,.32);
-  background:linear-gradient(145deg,#064572 0%,#003d6a 100%);
-  box-shadow:0 26px 58px rgba(0,25,49,.28);
-}
-.research-navigator:before{
-  background:rgba(22,193,186,.08);
-  box-shadow:0 0 0 42px rgba(22,193,186,.035);
-}
-.navigator-head>div span{color:#25d1ca;font-weight:500}
-.navigator-head strong{color:#fff;font-weight:500}
-.live-chip{border-color:rgba(37,209,202,.28);background:rgba(22,193,186,.08);color:#dff9f7;font-weight:400}
-.live-chip i{background:#31d1a1}
-.navigator-grid>a{border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.035)}
-.navigator-grid>a:hover{background:rgba(22,193,186,.09);border-color:rgba(37,209,202,.30)}
-.navigator-grid i{background:rgba(22,193,186,.10);color:#28d4cd;box-shadow:none}
-.navigator-grid strong{color:#fff;font-weight:500}
-.navigator-grid small{color:#bdd2da;font-weight:400}
-.navigator-grid b{color:#28d4cd}
-.navigator-foot span{background:rgba(255,255,255,.055);color:#c5d9df}
-
-.hero-metrics{background:#003567;border-top-color:rgba(255,255,255,.11)}
-.hero-metrics>a{border-left-color:rgba(255,255,255,.10)}
-.hero-metrics>a:hover{background:rgba(22,193,186,.07)}
-.metric-icon{background:rgba(22,193,186,.10);color:#27d1ca}
-.hero-metrics strong{color:#f9f8f4;font-weight:500}
-.hero-metrics small{color:#c4d5dc;font-weight:400!important}
-
-/* Light-content typography now uses a softer deep blue, with turquoise accents */
-.section-heading h2,.split-title h2,.heading-action h2,.results-title h2,.search-group h2,.content-block h2,.prose h2,
-.research-path-grid h3,.regime-card h2,.newsletter-modern h2,.country-discovery-copy h2{color:#123f61}
-.eyebrow,.section-heading .eyebrow,.text-link,.latest-main b,.research-path-grid b,.framework-rail b{color:#0baaa5}
-.text-link span,.research-path-grid i,.pill,.chip,.plan-code{background:#e2f7f5!important;color:#0a9d99!important}
-.research-path-grid>a:after{background:#16c1ba}
-.framework-section,.countries-directory-section{background:#f7f8f7}
-.region-tabs button.active{border-color:#003567;background:#003567;color:#fff}
-.region-tabs button:hover{border-color:#16c1ba;background:#eefaf9;color:#087f7c}
-.modern-country-grid a:hover,.regime-page-grid .regime-card:hover,.case-results article:hover,.institution-grid article:hover{border-color:#8ddbd7!important}
-
-/* Dark supporting sections */
-.country-hero,.case-hero{background:#003567!important}
-.country-hero h1,.case-hero h1{color:#f8f7f2}
-.country-hero p,.case-hero p{color:#dce8ed}
-.crumb.light{color:#b6ccd5}
-.research-cta{background:#003567}
-.research-cta h2{color:#fff}
-.research-cta p,.research-cta-actions>a:last-child{color:#c7d8de}
-.light-button{background:#16c1ba;color:#003567}
-.light-button:hover{background:#2bd1ca;color:#002c55}
-.modern-footer{background:#003567;color:#d6e2e7}
-.footer-intro p,.footer-links a{color:#b8ccd4}
-.modern-footer .modern-brand strong{color:#fff}
-.modern-footer .modern-brand small{color:#72d7d2}
-.footer-links h2{color:#25d1ca;font-weight:500!important}
-.footer-links a:hover{color:#fff}
-.modern-footer .footer-bottom{color:#9fb9c4}
-
-/* Primary controls */
-.button,.filters button,.form-card button,.directory-search button,.newsletter-modern button{background:#16c1ba;color:#003567;font-weight:500}
-.button:hover,.filters button:hover,.form-card button:hover,.directory-search button:hover,.newsletter-modern button:hover{background:#28d1ca;color:#002d57}
-.button.dark-btn{background:#003567;color:#fff}
-.button.dark-btn:hover{background:#084a78}
-input,select,textarea{accent-color:#16c1ba}
-input:focus,select:focus,textarea:focus{outline-color:rgba(22,193,186,.4)}
-::selection{background:#16c1ba;color:#002d57}
-
-/* Long brand name fit */
-.modern-brand>span:last-child{min-width:0}
-.modern-brand strong{font-size:16px;white-space:nowrap}
-
-@media(max-width:940px){
-  .modern-main-nav{background:#003567;border-color:rgba(255,255,255,.16);box-shadow:0 22px 60px rgba(0,25,49,.28)}
-  .modern-main-nav .nav-primary>a.active{background:rgba(22,193,186,.10)}
-  .nav-actions{border-top-color:rgba(255,255,255,.12)}
-}
-@media(max-width:720px){
-  .modern-brand strong{font-size:14px}
-}
-
-/* =========================================================
-   FLOATING CARD SYSTEM + 2026 BRAND MARK
-   Applies the turquoise-outline / lifted-card language across
-   public research, directory, account and detail surfaces.
-   ========================================================= */
-:root{
-  --card-border:rgba(66,214,208,.44);
-  --card-border-strong:rgba(66,214,208,.88);
-  --card-shadow:0 16px 36px rgba(0,53,103,.085),0 3px 10px rgba(0,53,103,.045);
-  --card-shadow-hover:0 24px 52px rgba(0,53,103,.14),0 8px 18px rgba(0,53,103,.07);
-}
-
-/* New logo mark: transparent turquoise / soft-white emblem. */
-.modern-brand{gap:13px}
-.modern-brand img{
-  width:52px;
-  height:52px;
-  border-radius:0;
-  box-shadow:none;
-  object-fit:contain;
-  flex:none;
-}
-.modern-brand strong{font-size:16px;line-height:1.08}
-.footer-brand img{width:50px;height:50px}
-
-/* Core floating card surfaces. */
-.research-path-grid>a,
-.framework-rail>a,
-.jurisdiction-panel,
-.modern-country-grid>a,
-.regime-page-grid .regime-card,
-.filters,
-.form-card,
-.case-results article,
-.institution-grid article,
-.content-block,
-.case-facts,
-.country-side section,
-.research-profile,
-.folder-create,
-.folder-grid>a,
-.research-items article,
-.plan-grid article,
-.version-timeline article,
-.country-tools,
-.search-group,
-.newsletter-modern form{
-  border:1px solid var(--card-border)!important;
-  box-shadow:var(--card-shadow)!important;
-  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background-color .22s ease;
-}
-
-/* Make the research-path modules individual cards rather than one segmented block. */
-.research-path-grid{
-  gap:18px;
-  border:0;
-  border-radius:0;
-  overflow:visible;
-  background:transparent;
-  box-shadow:none;
-}
-.research-path-grid>a{
-  border-radius:20px;
-  background:#fff;
-}
-.research-path-grid>a:first-child,
-.research-path-grid>a:nth-child(3),
-.research-path-grid>a:nth-child(4){border:1px solid var(--card-border)!important}
-
-/* Recent updates now share the same floating surface treatment. */
-.latest-stream{
-  display:grid;
-  gap:14px;
-  border-top:0;
-}
-.latest-stream article{
-  border:1px solid var(--card-border);
-  border-radius:18px;
-  padding:23px 22px;
-  background:#fff;
-  box-shadow:var(--card-shadow);
-  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
-}
-.latest-stream article:last-child{border-bottom:1px solid var(--card-border)}
-.latest-stream article:hover{
-  transform:translateY(-5px);
-  border-color:var(--card-border-strong);
-  box-shadow:var(--card-shadow-hover);
-}
-
-/* Hover lift for interactive cards. */
-.research-path-grid>a:hover,
-.framework-rail>a:hover,
-.modern-country-grid>a:hover,
-.regime-page-grid .regime-card:hover,
-.case-results article:hover,
-.institution-grid article:hover,
-.folder-grid>a:hover,
-.plan-grid article:hover{
-  transform:translateY(-6px);
-  border-color:var(--card-border-strong)!important;
-  box-shadow:var(--card-shadow-hover)!important;
-}
-
-/* Non-clickable cards still appear lifted without jumping on hover. */
-.filters,
-.form-card,
-.content-block,
-.case-facts,
-.country-side section,
-.research-profile,
-.folder-create,
-.research-items article,
-.version-timeline article,
-.country-tools,
-.search-group{
-  background:#fff;
-}
-
-/* Hero navigator gets a stronger dark-card glow in the same accent color. */
-.research-navigator{
-  border-color:rgba(66,214,208,.72)!important;
-  box-shadow:0 28px 68px rgba(0,22,46,.32),0 0 0 1px rgba(66,214,208,.13) inset!important;
-  transform:translateY(-3px);
-}
-.navigator-grid>a{
-  border-color:rgba(66,214,208,.28);
-  box-shadow:0 8px 18px rgba(0,20,41,.12);
-}
-.navigator-grid>a:hover{
-  border-color:rgba(66,214,208,.72);
-  box-shadow:0 13px 28px rgba(0,20,41,.20);
-}
-
-/* Give the metric tiles subtle independent depth without losing the banner rhythm. */
-.hero-metrics{gap:12px;padding:14px;border-top:1px solid rgba(66,214,208,.28)}
-.hero-metrics>a{
-  min-height:94px;
-  border:1px solid rgba(66,214,208,.30)!important;
-  border-radius:16px;
-  background:rgba(255,255,255,.025);
-  box-shadow:0 10px 24px rgba(0,22,46,.13);
-}
-.hero-metrics>a:hover{
-  transform:translateY(-3px);
-  border-color:rgba(66,214,208,.78)!important;
-  background:rgba(66,214,208,.085);
-  box-shadow:0 15px 30px rgba(0,22,46,.20);
-}
-
-/* Cool Teal card accent: separates floating surfaces from the blue/teal brand chrome. */
-.research-path-grid>a>i,
-.framework-rail>a>i,
-.search-group>i,
-.case-results article>i,
-.institution-grid article>i,
-.folder-grid>a>i{
-  color:#22B7B2;
-  background:rgba(66,214,208,.11);
-}
-.research-path-grid>a:hover>i,
-.framework-rail>a:hover>i,
-.folder-grid>a:hover>i{
-  background:rgba(66,214,208,.16);
-}
-
-/* The country-discovery container itself gets a restrained framed surface. */
-.jurisdiction-panel{
-  border-color:var(--card-border)!important;
-  box-shadow:0 24px 56px rgba(0,53,103,.11),0 4px 12px rgba(0,53,103,.05)!important;
-}
-
-/* Selected / featured cards retain the same border language. */
-.plan-grid article:nth-child(2){
-  border-color:var(--card-border-strong)!important;
-  box-shadow:0 22px 48px rgba(0,53,103,.12)!important;
-}
-
-@media(max-width:940px){
-  .modern-brand img{width:46px;height:46px}
-}
-@media(max-width:720px){
-  .modern-brand{gap:9px}
-  .modern-brand img{width:42px;height:42px}
-  .hero-metrics{grid-template-columns:1fr 1fr}
-}
-@media(max-width:520px){
-  .hero-metrics{grid-template-columns:1fr;gap:9px}
-}
-@media(prefers-reduced-motion:reduce){
-  .research-path-grid>a,.framework-rail>a,.modern-country-grid>a,.regime-page-grid .regime-card,
-  .case-results article,.institution-grid article,.folder-grid>a,.plan-grid article,.latest-stream article,
-  .hero-metrics>a{transition:none!important}
-  .research-path-grid>a:hover,.framework-rail>a:hover,.modern-country-grid>a:hover,.regime-page-grid .regime-card:hover,
-  .case-results article:hover,.institution-grid article:hover,.folder-grid>a:hover,.plan-grid article:hover,.latest-stream article:hover,
-  .hero-metrics>a:hover{transform:none!important}
-}
-
-/* Cool Teal coverage for legacy/shared card components still used on secondary pages. */
-.route,
-.regime-links a,
-.regime-directory article,
-.two-cards article,
-.status-grid div,
-.country-grid a,
-.institution-list article,
-.digital-routes .route,
-.regime-home-card,
-.africa-map-card,
-.popular-country-panel,
-.digital-updates article,
-.smart-search-panel,
-.country-stats div{
-  border-color:var(--card-border)!important;
-}
-.route:hover,
-.regime-links a:hover,
-.country-grid a:hover,
-.digital-routes .route:hover,
-.regime-home-card:hover{
-  border-color:var(--card-border-strong)!important;
-}
-
-/* Dark cards use a slightly brighter teal line so the accent remains visible on navy. */
-.research-navigator,
-.hero-metrics>a,
-.country-stats div,
-.smart-search-panel{
-  border-color:rgba(66,214,208,.48)!important;
-}
-
-/* =========================================================
-   COOL TEAL CARD ICON SYSTEM
-   Keep turquoise for brand/navigation actions; use the same
-   Cool Teal accent as the floating-card borders for card icons.
-   ========================================================= */
-:root{
-  --card-icon-teal:#42D6D0;
-  --card-icon-teal-bg:rgba(66,214,208,.12);
-  --card-icon-teal-bg-hover:rgba(66,214,208,.18);
-  --card-icon-teal-line:rgba(66,214,208,.28);
-}
-
-/* Modern homepage and workspace cards. */
-.navigator-grid>a>i,
-.metric-icon,
-.research-path-grid>a>i,
-.latest-stream .latest-main>i,
-.regime-page-grid .regime-card>header>i,
-.regime-page-grid .regime-card .doc-list>a>i,
-.case-results article>i,
-.institution-grid article>i,
-.folder-grid>a>i,
-.search-group>i,
-.coverage>a>.icon-box,
-.route>i,
-.digital-routes .route>i,
-.regime-links>a>i,
-.regime-home-card>i,
-.digital-updates .resource-icon,
-.institution-list article>i,
-.two-cards article>i,
-.status-grid>div>i{
-  color:var(--card-icon-teal)!important;
-  background:var(--card-icon-teal-bg)!important;
-  border-color:var(--card-icon-teal-line)!important;
-  box-shadow:none!important;
-}
-
-/* SVGs inherit the Cool Teal consistently, including Lucide strokes. */
-.navigator-grid>a>i svg,
-.metric-icon svg,
-.research-path-grid>a>i svg,
-.latest-stream .latest-main>i svg,
-.regime-page-grid .regime-card>header>i svg,
-.regime-page-grid .regime-card .doc-list>a>i svg,
-.case-results article>i svg,
-.institution-grid article>i svg,
-.folder-grid>a>i svg,
-.search-group>i svg,
-.coverage>a>.icon-box svg,
-.route>i svg,
-.digital-routes .route>i svg,
-.regime-links>a>i svg,
-.regime-home-card>i svg,
-.digital-updates .resource-icon svg,
-.institution-list article>i svg,
-.two-cards article>i svg,
-.status-grid>div>i svg{
-  color:var(--card-icon-teal)!important;
-  stroke:currentColor;
-}
-
-/* Slightly richer teal tint when an interactive card floats upward. */
-.navigator-grid>a:hover>i,
-.research-path-grid>a:hover>i,
-.framework-rail>a:hover>i,
-.regime-page-grid .regime-card:hover>header>i,
-.case-results article:hover>i,
-.institution-grid article:hover>i,
-.folder-grid>a:hover>i,
-.route:hover>i,
-.digital-routes .route:hover>i,
-.regime-home-card:hover>i{
-  background:var(--card-icon-teal-bg-hover)!important;
-}
-
-/* Dark hero cards still use the same Cool Teal, with a translucent halo. */
-.navigator-grid>a>i,
-.metric-icon{
-  border:1px solid rgba(66,214,208,.32)!important;
-  background:rgba(66,214,208,.13)!important;
-  color:#42D6D0!important;
-}
-
-/* =========================================================
-   OPTION 1 — RICH PURPLE CARD SYSTEM
-   Main colour: #800080
-   Applied across public-facing card surfaces.
-   Cool Teal is the border/icon accent.
-   ========================================================= */
-:root{
-  --card-purple:#800080;
-  --card-purple-light:#8d078d;
-  --card-purple-hover:#720072;
-  --card-purple-deep:#660066;
-  --card-purple-hover-deep:#5f005f;
-  --card-purple-text:#ffffff;
-  --card-purple-text-soft:rgba(255,255,255,.82);
-  --card-purple-accent:#42D6D0;
-  --card-purple-accent-light:#A7F1ED;
-  --card-purple-border:rgba(66,214,208,.62);
-  --card-purple-border-strong:#42D6D0;
-  --card-purple-shadow:0 17px 38px rgba(82,0,82,.20),0 4px 12px rgba(39,0,39,.10);
-  --card-purple-shadow-hover:0 24px 50px rgba(82,0,82,.30),0 8px 18px rgba(39,0,39,.14);
-}
-
-/* Primary and secondary card surfaces throughout the public interface. */
-.hero-metrics>a,
-.research-path-grid>a,
-.framework-rail>a,
-.jurisdiction-panel,
-.jurisdiction-list>a,
-.modern-country-grid>a,
-.latest-stream article,
-.regime-page-grid .regime-card,
-.case-results article,
-.institution-grid article,
-.research-profile,
-.folder-grid>a,
-.research-items article,
-.plan-grid article,
-.version-timeline article,
-.route,
-.regime-links a,
-.regime-directory article,
-.two-cards article,
-.status-grid div,
-.country-grid a,
-.institution-list article,
-.digital-routes .route,
-.regime-home-card,
-.africa-map-card,
-.popular-country-panel,
-.popular-country-grid a,
-.digital-updates article,
-.updates article,
-.country-stats div,
-.coverage,
-.membership-list span{
-  background:linear-gradient(145deg,var(--card-purple) 0%,var(--card-purple-light) 58%,var(--card-purple-deep) 100%)!important;
-  border-color:var(--card-purple-border)!important;
-  box-shadow:var(--card-purple-shadow)!important;
-}
-
-/* Preserve the floating-card interaction with a slightly darker purple hover. */
-.hero-metrics>a:hover,
-.research-path-grid>a:hover,
-.framework-rail>a:hover,
-.jurisdiction-list>a:hover,
-.modern-country-grid>a:hover,
-.latest-stream article:hover,
-.regime-page-grid .regime-card:hover,
-.case-results article:hover,
-.institution-grid article:hover,
-.folder-grid>a:hover,
-.plan-grid article:hover,
-.route:hover,
-.regime-links a:hover,
-.country-grid a:hover,
-.digital-routes .route:hover,
-.regime-home-card:hover,
-.popular-country-grid a:hover{
-  background:linear-gradient(145deg,#780078 0%,var(--card-purple-hover) 55%,var(--card-purple-hover-deep) 100%)!important;
-  border-color:var(--card-purple-border-strong)!important;
-  box-shadow:var(--card-purple-shadow-hover)!important;
-}
-
-/* The Direct routes cards keep the same rounded floating treatment. */
-.research-path-grid>a:first-child,
-.research-path-grid>a:nth-child(3),
-.research-path-grid>a:nth-child(4){
-  border-color:var(--card-purple-border)!important;
-}
-.research-path-grid>a:hover:first-child,
-.research-path-grid>a:hover:nth-child(3),
-.research-path-grid>a:hover:nth-child(4){
-  border-color:var(--card-purple-border-strong)!important;
-}
-
-/* Card headings and primary copy switch to white for contrast. */
-.research-path-grid h3,
-.framework-rail h3,
-.jurisdiction-panel-head strong,
-.jurisdiction-list strong,
-.modern-country-grid strong,
-.latest-main h3,
-.regime-page-grid .regime-card h2,
-.case-results article h2,
-.case-results article h3,
-.institution-grid article h2,
-.institution-grid article h3,
-.research-profile h2,
-.folder-grid strong,
-.research-items h2,
-.plan-grid h2,
-.plan-grid>article>strong,
-.version-timeline strong,
-.route h3,
-.regime-links strong,
-.regime-directory h2,
-.two-cards h2,
-.two-cards h3,
-.status-grid strong,
-.country-grid strong,
-.institution-list h2,
-.institution-list h3,
-.regime-home-card h3,
-.popular-country-panel h2,
-.popular-country-panel h3,
-.popular-country-grid strong,
-.digital-updates h3,
-.updates h3,
-.coverage strong,
-.membership-list strong{
-  color:var(--card-purple-text)!important;
-}
-
-/* Secondary copy remains softer, but still comfortably readable. */
-.research-path-grid p,
-.framework-rail p,
-.jurisdiction-list small,
-.modern-country-grid small,
-.latest-main p,
-.latest-meta,
-.latest-meta time,
-.regime-page-grid .regime-card>p,
-.case-results article p,
-.case-results article small,
-.institution-grid article p,
-.institution-grid article small,
-.research-profile p,
-.research-profile small,
-.folder-grid small,
-.research-items p,
-.plan-grid>article>small,
-.plan-grid p,
-.plan-grid ul,
-.version-timeline small,
-.version-timeline p,
-.route p,
-.regime-links small,
-.regime-directory p,
-.two-cards p,
-.two-cards small,
-.status-grid small,
-.country-grid small,
-.institution-list p,
-.institution-list small,
-.regime-home-card p,
-.popular-country-grid small,
-.digital-updates p,
-.updates p,
-.coverage small,
-.membership-list small{
-  color:var(--card-purple-text-soft)!important;
-}
-
-/* Cool teal navigation cues, labels and arrows complement Option 1. */
-.research-path-grid .path-number,
-.framework-index,
-.regime-page-grid .regime-card header,
-.regime-page-grid .regime-card header>span,
-.plan-code,
-.route b,
-.regime-links b,
-.country-grid b,
-.digital-updates footer b,
-.regime-home-card b,
-.popular-country-grid b,
-.modern-country-grid b,
-.jurisdiction-list b,
-.latest-main>b,
-.version-timeline a,
-.folder-grid b,
-.coverage>a>b{
-  color:var(--card-purple-accent-light)!important;
-}
-.research-path-grid b{color:var(--card-purple-accent-light)!important}
-.research-path-grid>a:after{background:var(--card-purple-accent)!important}
-
-/* Cool teal icon language remains consistent on every purple card. */
-.research-path-grid>a>i,
-.framework-rail>a>i,
-.latest-stream .latest-main>i,
-.regime-page-grid .regime-card>header>i,
-.case-results article>i,
-.institution-grid article>i,
-.folder-grid>a>i,
-.route>i,
-.digital-routes .route>i,
-.regime-links>a>i,
-.regime-home-card>i,
-.digital-updates .resource-icon,
-.institution-list article>i,
-.two-cards article>i,
-.status-grid>div>i,
-.coverage>a>.icon-box,
-.metric-icon{
-  color:var(--card-purple-accent)!important;
-  background:rgba(255,255,255,.09)!important;
-  border:1px solid rgba(66,214,208,.72)!important;
-  box-shadow:0 8px 20px rgba(45,0,45,.18)!important;
-}
-
-.research-path-grid>a>i svg,
-.framework-rail>a>i svg,
-.latest-stream .latest-main>i svg,
-.regime-page-grid .regime-card>header>i svg,
-.case-results article>i svg,
-.institution-grid article>i svg,
-.folder-grid>a>i svg,
-.route>i svg,
-.digital-routes .route>i svg,
-.regime-links>a>i svg,
-.regime-home-card>i svg,
-.digital-updates .resource-icon svg,
-.institution-list article>i svg,
-.two-cards article>i svg,
-.status-grid>div>i svg,
-.coverage>a>.icon-box svg,
-.metric-icon svg{
-  color:var(--card-purple-accent)!important;
-  stroke:currentColor;
-}
-
-/* Inner list rows inside purple cards become translucent sub-cards. */
-.jurisdiction-panel-head,
-.regime-card .compact-list a,
-.regime-card .doc-list a,
-.regime-directory .doc-list a,
-.coverage>a{
-  background:rgba(255,255,255,.055)!important;
-  border-color:rgba(66,214,208,.25)!important;
-}
-.jurisdiction-panel-head{
-  border-bottom:1px solid rgba(66,214,208,.34)!important;
-}
-.regime-card .compact-list a:hover,
-.regime-card .doc-list a:hover,
-.regime-directory .doc-list a:hover,
-.coverage>a:hover{
-  background:rgba(255,255,255,.10)!important;
-}
-.regime-card .compact-list strong,
-.regime-card .doc-list strong,
-.regime-directory .doc-list strong,
-.coverage>a strong{
-  color:#fff!important;
-}
-.regime-card .compact-list small,
-.regime-card .doc-list small,
-.regime-directory .doc-list small,
-.coverage>a small{
-  color:var(--card-purple-text-soft)!important;
-}
-.regime-card .compact-list b,
-.regime-card .doc-list b,
-.regime-directory .doc-list b{
-  color:var(--card-purple-accent-light)!important;
-}
-
-/* Country chips stay visually distinct on the purple surface. */
-.country-code,
-.country-badge{
-  background:rgba(255,255,255,.12)!important;
-  color:#fff!important;
-  border:1px solid rgba(66,214,208,.45);
-}
-
-/* Selected/featured cards use a stronger teal outline rather than another background colour. */
-.plan-grid article:nth-child(2){
-  border-color:var(--card-purple-border-strong)!important;
-  box-shadow:var(--card-purple-shadow-hover)!important;
-}
-
-/* Keep the Africa silhouette visible while adopting the shared purple card surface. */
-.africa-map-shape span{
-  background:linear-gradient(150deg,#42D6D0 0%,#7FE5E0 48%,#D8FAF8 100%)!important;
-  filter:drop-shadow(0 16px 20px rgba(54,0,54,.25));
-}
-.map-dot{border-color:#42D6D0;box-shadow:0 0 0 5px rgba(66,214,208,.18)}
-
-/* Keep any controls nested in purple cards light and usable. */
-.plan-grid .button,
-.research-profile input,
-.research-profile select,
-.research-items input,
-.research-items select{
-  color:inherit;
-}
-
-@media(prefers-reduced-motion:reduce){
-  .hero-metrics>a:hover,
-  .research-path-grid>a:hover,
-  .framework-rail>a:hover,
-  .jurisdiction-list>a:hover,
-  .modern-country-grid>a:hover,
-  .latest-stream article:hover,
-  .regime-page-grid .regime-card:hover,
-  .case-results article:hover,
-  .institution-grid article:hover,
-  .folder-grid>a:hover,
-  .plan-grid article:hover,
-  .route:hover,
-  .regime-links a:hover,
-  .country-grid a:hover,
-  .digital-routes .route:hover,
-  .regime-home-card:hover,
-  .popular-country-grid a:hover{
-    transform:none!important;
+/* African Disputes Resolution — 2026 Balanced Color Refresh
+   Professional, accessible color system for legal research platform
+   Primary: Deep Navy | Secondary: Soft Teal | Accent: Warm Neutral */
+
+:root {
+  /* Core Color Palette */
+  --primary-dark: #003D5C;     /* Deep Navy - authority, trust */
+  --primary-light: #0B5A7E;    /* Medium Navy - secondary actions */
+  --secondary-teal: #4ECDC4;   /* Soft Teal - interactive elements, accents */
+  --secondary-teal-dark: #2FA399;  /* Darker teal for hover states */
+  --accent-warm: #E8DCC8;      /* Warm neutral - highlights, warmth */
+  --accent-warm-dark: #C9B8A0; /* Deeper warm tone for depth */
+  
+  /* Neutral System */
+  --bg-primary: #F8FAFB;       /* Main background */
+  --bg-secondary: #FFFFFF;     /* Card backgrounds */
+  --text-primary: #1F2937;     /* Primary text (dark gray) */
+  --text-secondary: #6B7280;   /* Secondary text (medium gray) */
+  --text-light: #9CA3AF;       /* Light text (light gray) */
+  --text-inverse: #FFFFFF;     /* Text on dark backgrounds */
+  --border-color: #E5E7EB;     /* Subtle borders */
+  --border-strong: #D1D5DB;    /* Stronger borders */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.12);
+  
+  /* Legacy compatibility variables */
+  --ink: #1F2937;
+  --muted: #6B7280;
+  --green: #003D5C;
+  --green-2: #0B5A7E;
+  --green-3: #4ECDC4;
+  --gold: #E8DCC8;
+  --gold-soft: #F5F3F0;
+  --cream: #F8FAFB;
+  --paper: #FFFFFF;
+  --line: #E5E7EB;
+  --shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --max: 1280px;
+  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --serif: var(--font);
+  --navy: #003D5C;
+  --navy-2: #0B5A7E;
+  --blue: #1E5A96;
+  --teal: #4ECDC4;
+  --teal-dark: #2FA399;
+  --aqua: #D4F4F1;
+  --ice: #EBF8F6;
+  --surface: #F8FAFB;
+  --surface-2: #F1F5F7;
+  --white: #FFFFFF;
+  --soft-white: #F8FAFB;
+  --dark-copy: #D1D5DB;
+}
+
+/* Reset and Base Styles */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 { 
+  font-weight: 700; 
+  line-height: 1.2; 
+  color: var(--primary-dark);
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+p { color: var(--text-primary); margin: 0 0 1rem 0; }
+small, .text-small { color: var(--text-secondary); font-size: 0.875rem; }
+
+/* Container */
+.container {
+  width: min(calc(100% - 48px), var(--max));
+  margin: 0 auto;
+}
+.narrow { width: min(calc(100% - 48px), 820px); }
+
+/* Selection */
+::selection { background: var(--secondary-teal); color: var(--primary-dark); }
+
+/* ========================================================= 
+   HEADER & NAVIGATION */
+.site-header, .site-header.modern-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.nav-row, .modern-nav-row {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  gap: 24px;
+}
+
+.brand, .modern-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.brand img, .modern-brand img {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+}
+
+.brand strong, .modern-brand strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+}
+
+.brand small, .modern-brand small {
+  display: block;
+  font-size: 10px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.main-nav, .modern-main-nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+}
+
+.main-nav a, .modern-main-nav a {
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.main-nav a:hover, .modern-main-nav a:hover {
+  background: var(--bg-primary);
+  color: var(--primary-dark);
+  border-color: var(--border-color);
+}
+
+.main-nav a.active, .modern-main-nav .nav-primary > a.active {
+  background: var(--accent-warm);
+  color: var(--primary-dark);
+  border-color: transparent;
+}
+
+.main-nav a.active:after, .modern-main-nav .nav-primary > a.active:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 12px;
+  right: 12px;
+  height: 3px;
+  background: var(--secondary-teal);
+  border-radius: 2px;
+}
+
+.language-picker, .nav-search, .workspace-link {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.language-picker select, .nav-search, .workspace-link {
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.nav-toggle {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--primary-dark);
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+/* ========================================================= 
+   HERO SECTION */
+.hero, .hero-modern {
+  position: relative;
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 50%, var(--secondary-teal-dark) 100%);
+  color: var(--text-inverse);
+  overflow: hidden;
+}
+
+.hero:before, .hero-modern:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+}
+
+.hero:after, .hero-modern:after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  right: -100px;
+  top: -150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(78, 205, 196, 0.15) 0%, rgba(78, 205, 196, 0.05) 40%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-modern-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-modern h1 {
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px;
+  line-height: 1.1;
+  color: var(--text-inverse);
+}
+
+.hero-modern p, .hero-main-copy > p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 24px;
+  max-width: 500px;
+}
+
+.modern-hero-search {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  max-width: 100%;
+}
+
+.modern-hero-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.modern-hero-search button {
+  padding: 12px 24px;
+  background: var(--secondary-teal);
+  color: var(--bg-secondary);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modern-hero-search button:hover {
+  background: var(--secondary-teal-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================================= 
+   RESEARCH NAVIGATOR / COVERAGE AT A GLANCE */
+.research-navigator {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+  border: 1px solid rgba(78, 205, 196, 0.4);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.navigator-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.navigator-grid > a {
+  display: grid;
+  grid-template-columns: 44px 1fr 20px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(78, 205, 196, 0.3);
+  border-radius: 12px;
+  color: var(--text-inverse);
+  transition: all 0.2s ease;
+}
+
+.navigator-grid > a:hover {
+  background: rgba(78, 205, 196, 0.15);
+  border-color: rgba(78, 205, 196, 0.7);
+  transform: translateY(-3px);
+}
+
+.navigator-grid i {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--secondary-teal);
+  color: var(--primary-dark);
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.navigator-grid strong {
+  font-weight: 700;
+  color: var(--text-inverse);
+}
+
+.navigator-grid small {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+/* ========================================================= 
+   SECTIONS & CONTENT */
+.section {
+  padding: 72px 0;
+  background: var(--bg-primary);
+}
+
+.section.muted {
+  background: var(--surface);
+}
+
+.section-heading {
+  margin-bottom: 48px;
+}
+
+.section-heading .eyebrow, .eyebrow {
+  color: var(--secondary-teal);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 40px);
+  color: var(--primary-dark);
+  letter-spacing: -0.02em;
+}
+
+/* ========================================================= 
+   RESEARCH PATHS / CARD GRID */
+.research-path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.research-path-grid > a {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  min-height: 200px;
+  position: relative;
+}
+
+.research-path-grid > a:hover {
+  border-color: var(--secondary-teal);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.research-path-grid > a i {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: var(--accent-warm);
+  color: var(--accent-warm-dark);
+  border-radius: 10px;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.research-path-grid h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0 0 8px;
+}
+
+.research-path-grid p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ========================================================= 
+   CARDS & FLOATING SURFACES */
+.regime-card, .content-block, .case-facts, .institution-grid article,
+.modern-country-grid a, .research-profile, .folder-grid a,
+.research-items article, .plan-grid article {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.regime-card:hover, .content-block:hover, .case-facts:hover,
+.institution-grid article:hover, .modern-country-grid a:hover,
+.research-profile:hover, .folder-grid a:hover,
+.research-items article:hover, .plan-grid article:hover {
+  border-color: var(--secondary-teal);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ========================================================= 
+   BUTTONS & ACTIONS */
+.button, .filters button, .form-card button, .directory-search button, .coral-btn {
+  background: var(--secondary-teal);
+  color: var(--bg-secondary);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover, .filters button:hover, .form-card button:hover, 
+.directory-search button:hover, .coral-btn:hover {
+  background: var(--secondary-teal-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button.dark-btn {
+  background: var(--primary-dark);
+  color: var(--text-inverse);
+}
+
+.button.dark-btn:hover {
+  background: var(--primary-light);
+}
+
+/* ========================================================= 
+   FORMS & INPUTS */
+input, select, textarea {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  transition: all 0.2s ease;
+  accent-color: var(--secondary-teal);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--secondary-teal);
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
+}
+
+/* ========================================================= 
+   FOOTER */
+.modern-footer, footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 60px 0 20px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand strong {
+  color: var(--text-inverse);
+  font-size: 18px;
+}
+
+.footer-brand small {
+  color: var(--secondary-teal);
+}
+
+.footer-links, .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer-links h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--secondary-teal);
+  margin: 0 0 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.footer-links a, .footer-grid a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover, .footer-grid a:hover {
+  color: var(--secondary-teal);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+/* ========================================================= 
+   RESPONSIVE DESIGN */
+@media (max-width: 1180px) {
+  .hero-modern-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .research-path-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-links, .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* =========================================================
-   COVERAGE AT A GLANCE — ORIGINAL BANNER CARD
-   Keep this hero card in the original dark-blue/teal scheme.
-   It is intentionally excluded from the purple card system.
-   ========================================================= */
-.research-navigator{
-  border:1px solid rgba(160,210,222,.32)!important;
-  background:linear-gradient(145deg,#064572 0%,#003d6a 100%)!important;
-  box-shadow:0 26px 58px rgba(0,25,49,.28)!important;
-  transform:none;
+@media (max-width: 768px) {
+  .nav-row, .modern-nav-row {
+    height: 64px;
+    gap: 16px;
+  }
+  .main-nav, .modern-main-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px;
+    gap: 4px;
+    z-index: 50;
+  }
+  .main-nav.active, .modern-main-nav.active {
+    display: flex;
+  }
+  .hero, .hero-modern {
+    padding: 60px 0;
+  }
+  .hero-modern h1 {
+    font-size: 36px;
+  }
+  .research-path-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section {
+    padding: 48px 0;
+  }
+  .footer-top {
+    padding-bottom: 24px;
+  }
 }
-.research-navigator:before{
-  background:rgba(22,193,186,.08)!important;
-  box-shadow:0 0 0 42px rgba(22,193,186,.035)!important;
-}
-.navigator-head>div span{color:#25d1ca!important;font-weight:500}
-.navigator-head strong{color:#fff!important;font-weight:500}
-.live-chip{border-color:rgba(37,209,202,.28)!important;background:rgba(22,193,186,.08)!important;color:#dff9f7!important;font-weight:400}
-.live-chip i{background:#31d1a1!important}
-.navigator-grid>a{
-  border-color:rgba(255,255,255,.12)!important;
-  background:rgba(255,255,255,.035)!important;
-  box-shadow:none!important;
-}
-.navigator-grid>a:hover{
-  background:rgba(22,193,186,.09)!important;
-  border-color:rgba(37,209,202,.30)!important;
-  box-shadow:none!important;
-}
-.navigator-grid>a>i,
-.navigator-grid>a:hover>i{
-  background:rgba(22,193,186,.10)!important;
-  color:#28d4cd!important;
-  border:0!important;
-  box-shadow:none!important;
-}
-.navigator-grid>a>i svg{color:#28d4cd!important;stroke:currentColor}
-.navigator-grid strong{color:#fff!important;font-weight:500}
-.navigator-grid small{color:#bdd2da!important;font-weight:400}
-.navigator-grid b{color:#28d4cd!important}
-.navigator-foot span{background:rgba(255,255,255,.055)!important;color:#c5d9df!important}
 
+@media (max-width: 520px) {
+  .hero, .hero-modern {
+    padding: 48px 0;
+  }
+  .hero-modern-grid {
+    gap: 24px;
+  }
+  .hero-modern h1 {
+    font-size: 28px;
+  }
+  .research-path-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-links, .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-row, .modern-nav-row {
+    height: 56px;
+  }
+  .brand img, .modern-brand img {
+    width: 40px;
+    height: 40px;
+  }
+  .brand strong, .modern-brand strong {
+    font-size: 14px;
+  }
+}
 
-/* =========================================================
-   COUNTRIES DIRECTORY — REGION FILTER CONTROLS
-   Lighter blue control palette + resilient active/hover states.
-   ========================================================= */
-.region-tabs{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:8px;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-.region-tabs a,
-.region-tabs button{
-  appearance:none;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:38px;
-  padding:9px 15px;
-  border:1px solid #bfd9e8!important;
-  border-radius:999px!important;
-  background:linear-gradient(180deg,#f6fbfe 0%,#edf6fb 100%)!important;
-  color:#225f84!important;
-  box-shadow:0 5px 14px rgba(30,102,145,.07)!important;
-  font-size:11px!important;
-  font-weight:550!important;
-  line-height:1;
-  text-decoration:none;
-  white-space:nowrap;
-  cursor:pointer;
-  transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease,transform .18s ease;
+
+/* ========================================================= 
+   RTL SUPPORT */
+html[dir="rtl"] .research-path-grid > a {
+  grid-template-columns: 1fr 48px;
 }
-.region-tabs a:hover,
-.region-tabs button:hover{
-  transform:translateY(-1px)!important;
-  border-color:#73b6d6!important;
-  background:linear-gradient(180deg,#e9f6fc 0%,#dceef8 100%)!important;
-  color:#164f72!important;
-  box-shadow:0 8px 18px rgba(31,112,157,.13)!important;
+
+html[dir="rtl"] .navigator-grid > a {
+  grid-template-columns: 20px 1fr 44px;
 }
-.region-tabs a.active,
-.region-tabs button.active{
-  border-color:#2d80af!important;
-  background:linear-gradient(135deg,#2d80af 0%,#4b9bc6 100%)!important;
-  color:#fff!important;
-  box-shadow:0 8px 20px rgba(45,128,175,.22)!important;
+
+html[dir="rtl"] .footer-top {
+  grid-template-columns: 1.5fr 1fr;
 }
-.region-tabs a.active:hover,
-.region-tabs button.active:hover{
-  border-color:#246f9b!important;
-  background:linear-gradient(135deg,#26739f 0%,#428eb9 100%)!important;
-  color:#fff!important;
-}
-.region-tabs a:focus-visible,
-.region-tabs button:focus-visible{
-  outline:3px solid rgba(66,214,208,.34);
-  outline-offset:2px;
-}
-.country-tools{
-  border-color:rgba(45,128,175,.14)!important;
-  box-shadow:0 15px 35px rgba(31,93,128,.07)!important;
-}
-.country-tools .country-search{
-  border-color:#c9dfea!important;
-  background:#f8fbfd!important;
+
+html[dir="rtl"] .hero-modern-grid {
+  direction: rtl;
 }

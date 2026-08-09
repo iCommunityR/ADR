@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">African Disputes Resolution</title>
+  <desc id="desc">A modern balance scale and Africa emblem.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="80" cy="80" r="61" stroke="#16C1BA" stroke-width="5" opacity=".92"/>
+    <path d="M36 82c4-30 22-50 48-58M124 82c-4-30-22-50-48-58" stroke="#16C1BA" stroke-width="2.5" opacity=".5"/>
+    <path d="M80 28v30M48 50h64" stroke="#F7F8F5" stroke-width="4.5"/>
+    <path d="M53 50 41 72M53 50l12 22M107 50 95 72M107 50l12 22" stroke="#16C1BA" stroke-width="3"/>
+    <path d="M32 73c4 10 14 15 21 15s17-5 21-15H32ZM86 73c4 10 14 15 21 15s17-5 21-15H86Z" stroke="#F7F8F5" stroke-width="3.5"/>
+    <path d="M64 58h32" stroke="#F7F8F5" stroke-width="3" opacity=".8"/>
+  </g>
+  <path d="M79 62c-8 0-15 3-20 9-4 5-5 12-2 18 2 5 7 8 11 12l1 10 7 6 3 12 8 9 5-10 7-7 2-9 7-7-3-9 5-8-4-9-8-4-4-8-8 1-5-6Z" fill="#16C1BA"/>
+  <path d="m83 73 7 3 1 7 8 3-5 7 1 8-7 5-2 12-6-6-1-12-6-5 3-7-3-6 5-4 5-5Z" fill="#F7F8F5" opacity=".95"/>
+  <circle cx="80" cy="28" r="5" fill="#16C1BA" stroke="#F7F8F5" stroke-width="2"/>
+</svg>

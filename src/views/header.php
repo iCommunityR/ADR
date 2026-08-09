@@ -5,14 +5,15 @@ if (!isset($app)) {
     $app = $configTmp['app'] ?? ['name' => 'African Disputes Resolution'];
 }
 $base = rtrim($app['base_url'] ?? '', '/');
+$assetPrefix = $base !== '' ? $base : '.';
 ?><!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title><?= htmlspecialchars($app['name'], ENT_QUOTES, 'UTF-8') ?></title>
-  <link rel="stylesheet" href="/public/css/styles.css">
-  <script defer src="/public/js/app.js"></script>
+  <link rel="stylesheet" href="<?= $assetPrefix ?>/public/css/styles.css">
+  <script defer src="<?= $assetPrefix ?>/public/js/app.js"></script>
 </head>
 <body>
   <header class="container header">

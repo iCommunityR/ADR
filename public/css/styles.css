@@ -1,0 +1,45 @@
+/* public/css/styles.css - color balanced UI with card components */
+:root{
+  --bg:#f7f9fb;
+  --muted:#e6eef6;
+  --primary:#0e6b66;
+  --accent:#ff7a59;
+  --highlight:#ffd66b;
+  --text:#24323f;
+  --card-1:#f0fbf9;
+  --card-2:#fff6f3;
+  --radius:10px;
+  --shadow: 0 6px 18px rgba(18, 35, 53, 0.08);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.45;
+}
+.container{max-width:1100px;margin:28px auto;padding:0 16px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{font-weight:700;color:var(--primary);font-size:20px}
+.nav a{margin-left:16px;color:var(--text);text-decoration:none}
+.search{margin-left:20px}
+.lead{color:#425463;margin-top:6px}
+.grid{display:grid;grid-template-columns: repeat(3, 1fr);gap:18px;margin-top:22px}
+@media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:600px){ .grid{grid-template-columns:1fr} }
+.card{border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.97));box-shadow:var(--shadow);padding:18px;transition:transform .15s ease, box-shadow .15s ease}
+.card:hover{ transform: translateY(-6px); box-shadow:0 10px 30px rgba(18,35,53,0.12)}
+.card-meta{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.badge{background:var(--highlight);padding:4px 8px;border-radius:8px;font-size:12px}
+.muted{color:#6c7a86;font-size:13px}
+.card-title{margin:0 0 8px;font-size:18px}
+.card-summary{color:#425463;font-size:14px;margin-bottom:12px}
+.card-cta{display:flex;gap:8px}
+.btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+.btn-outline{border:1px solid rgba(36,50,63,0.08);background:transparent;color:var(--primary)}
+.btn-primary{background:var(--accent);color:#fff}
+.footer{border-top:1px solid rgba(36,50,63,0.06);padding:20px 0;margin-top:36px;color:#6c7a86;font-size:14px}
+.header-row{display:flex;align-items:center}
+.logo-mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--accent));display:inline-block;margin-right:12px}

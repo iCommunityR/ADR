@@ -1,5 +1,0 @@
-<?php
-require __DIR__.'/includes/bootstrap.php';$pdo=db_or_null();if(!$pdo||!installed()){http_response_code(404);exit('File unavailable.');}
-$s=$pdo->prepare('SELECT v.file_path,v.original_filename,v.mime_type,v.revision_no,d.title FROM document_versions v JOIN documents d ON d.id=v.document_id WHERE v.id=? AND d.is_published=1 AND v.is_published=1');$s->execute([(int)($_GET['id']??0)]);$row=$s->fetch();if(!$row||!$row['file_path']){http_response_code(404);exit('Archived file unavailable.');}
-global $config;$base=realpath($config['upload']['path']);$path=realpath($config['upload']['path'].'/'.ltrim($row['file_path'],'/'));if(!$base||!$path||!str_starts_with($path,$base.DIRECTORY_SEPARATOR)||!is_file($path)){http_response_code(404);exit('Archived file unavailable.');}
-$name=preg_replace('/[^A-Za-z0-9._ -]/','_',basename($row['original_filename']?:$row['title'].'-revision-'.$row['revision_no'].'.pdf'));header('Content-Type: '.($row['mime_type']?:'application/octet-stream'));header('Content-Length: '.filesize($path));header('Content-Disposition: attachment; filename="'.$name.'"');header('X-Content-Type-Options: nosniff');readfile($path);
